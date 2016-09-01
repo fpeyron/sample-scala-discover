@@ -26,3 +26,12 @@ $ docker push florentpeyron/discovery-service
 run locally instances peer1 and peer2 :
 $ java -jar -Xmx128m -Xms128m -Dspring.profiles.active=peer1 target/discovery-service-1.0-SNAPSHOT.jar
 $ java -jar -Xmx128m -Xms128m -Dspring.profiles.active=peer2 target/discovery-service-1.0-SNAPSHOT.jar
+
+
+docker create  --name sample-scala-discover -t -p 8761:8761 florentpeyron/sample-scala-discover
+
+docker create  --name sample-scala-discover2 -t -p 8762:8761 \
+    -e PROFILES='dev' \
+    -e JAVA_OPTS='-Xmx128m -Xms128m -Deureka.instance.ip-address=192.168.99.100 -Deureka.port=8762 -Deureka.client.serviceUrl.defaultZone=http://user:password@192.168.99.100:8761/eureka,http://user:password@192.168.99.100:8762/eureka' \
+florentpeyron/sample-scala-discover
+
