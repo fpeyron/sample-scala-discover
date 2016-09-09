@@ -31,6 +31,8 @@ $ java -jar -Xmx128m -Xms128m -Dspring.profiles.active=peer2 target/discovery-se
 docker create  --name sample-scala-discover -t -p 8761:8761 florentpeyron/sample-scala-discover
 
 docker create  --name sample-scala-discover2 -t -p 8762:8761 \
+    -e INSTANCE_HOST='192.168.99.100' \
+    -e INSTANCE_PORT='8762' \
     -e PROFILES='dev' \
     -e JAVA_OPTS='-Xmx128m -Xms128m -Deureka.instance.ip-address=192.168.99.100 -Deureka.port=8762 -Deureka.client.serviceUrl.defaultZone=http://user:password@192.168.99.100:8761/eureka,http://user:password@192.168.99.100:8762/eureka' \
 florentpeyron/sample-scala-discover
