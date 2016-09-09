@@ -1,6 +1,6 @@
 package fr.sysf.sample.eurekaconfig
 
-import fr.sysf.sample.eurekadiscovery.ApplicationConfig
+import fr.sysf.sample.register.ApplicationConfig
 import org.junit.runner.RunWith
 import org.junit.{Assert, Test}
 import org.springframework.beans.factory.annotation.Autowired

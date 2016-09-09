@@ -1,4 +1,4 @@
-package fr.sysf.sample.eurekadiscovery
+package fr.sysf.sample.register
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration

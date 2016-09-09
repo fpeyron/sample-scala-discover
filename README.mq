@@ -13,13 +13,13 @@ main method, or use "mvn spring-boot:run"). It will start up on port
 
 ## Docker Container
 
-There is a Maven goal (using a [plugin](https://github.com/fpeyron/discovery-service/blob/master/pom.xml#L103)) to
-generate the Docker container. The container is published in dockerhub at `florentpeyron/discovery-service`.
+There is a Maven goal (using a [plugin](https://github.com/fpeyron/register-service/blob/master/pom.xml#L103)) to
+generate the Docker container. The container is published in dockerhub at `florentpeyron/register-service`.
 
 After connect to docker machine  ( eval $(docker-machine env default) )
 
 $ mvn package docker:build
-$ docker push florentpeyron/discovery-service
+$ docker push florentpeyron/register-service
 
 ### Standalone command
 
@@ -28,12 +28,12 @@ $ java -jar -Xmx128m -Xms128m -Dspring.profiles.active=peer1 target/discovery-se
 $ java -jar -Xmx128m -Xms128m -Dspring.profiles.active=peer2 target/discovery-service-1.0-SNAPSHOT.jar
 
 
-docker create  --name sample-scala-discover -t -p 8761:8761 florentpeyron/sample-scala-discover
+docker create  --name sample-scala-register -t -p 8761:8761 florentpeyron/sample-scala-register
 
-docker create  --name sample-scala-discover2 -t -p 8762:8761 \
+docker create  --name sample-scala-register2 -t -p 8762:8761 \
     -e INSTANCE_HOST='192.168.99.100' \
     -e INSTANCE_PORT='8762' \
     -e PROFILES='dev' \
     -e JAVA_OPTS='-Xmx128m -Xms128m -Deureka.instance.ip-address=192.168.99.100 -Deureka.port=8762 -Deureka.client.serviceUrl.defaultZone=http://user:password@192.168.99.100:8761/eureka,http://user:password@192.168.99.100:8762/eureka' \
-florentpeyron/sample-scala-discover
+florentpeyron/sample-scala-register
 

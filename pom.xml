@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.sysf.sample</groupId>
-    <artifactId>sample-scala-discover</artifactId>
+    <artifactId>sample-scala-register</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>sample :: scala :: discover</name>
-    <description>My sample application eureka discovery</description>
+    <name>sample :: scala :: register</name>
+    <description>My sample application eureka register</description>
     <url>http://www.sysf.fr</url>
 
     <properties>
